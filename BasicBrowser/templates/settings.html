@@ -1,0 +1,47 @@
+<html>
+<head>
+    <script language="JavaScript" src="http://code.jquery.com/jquery-1.4.4.js"></script>
+    <script language="JavaScript" src="/static/js/pie.js"></script>
+    <script language="JavaScript" src="/static/js/search.js"></script>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <title>Settings</title>
+
+    <link href="/static/css/styling.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+{{ nav_bar|safe }}
+
+    <div id="top"></div>
+
+    <h1 id="header">
+        <table><tr>
+            <td id="title">Wikipedia Online LDA Settings</td>
+        </tr></table>
+
+        <hr noshade>
+    </h1>
+
+    <div id="main">
+        <table>
+            <form action="/settings/apply" method="post">
+                {% csrf_token %} 
+                <label for="id_doc_topic_score_threshold">Doc-Topic score threshold</label>
+                  <input type="text" name="doc_topic_score_threshold" id="id_doc_topic_score_threshold" value="{{ settings.doc_topic_score_threshold }}" />
+                <br />
+                <input type="checkbox" name="doc_topic_scaled_score" id="id_doc_topic_scaled_score" {% if settings.doc_topic_scaled_score %}checked="yes" {% endif %}/>
+                  <label for="id_doc_topic_scaled_score">Use threshold in proportion to document size</label>
+                <br />
+                <input type="submit" value="Apply" />
+            </form>
+        </table>
+    </div>
+
+    <div id="footer">
+        <br>
+        <hr noshade>
+    </div>
+</body>
+</html>

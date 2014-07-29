@@ -1,0 +1,637 @@
+body {
+	font: 16px Calibri, "Gill Sans", "Trebuchet MS", sans-serif;
+	line-height: 1.25;
+	background: #D5DFF5;
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	color: #000;
+	text-decoration: none;
+}
+
+a:active {
+	color: #0050FF;
+}
+
+h1 {
+    line-height:0em;
+    margin-top: 1.5em;
+}
+
+#header canvas {
+}
+
+h2 {
+    line-height: 0em;
+    font-size: 16px;
+    font-style: italic;
+}
+
+#header {
+    text-align:center;
+}
+
+#header table {
+	margin-left: auto;
+	margin-right: auto;
+	text-align:center;
+	width: 80%;
+}
+
+#header td {
+	vertical-align: middle;
+	font-weight: bold;
+	font-size: 16px;
+}
+
+#header td#title {
+	font-weight: bold;
+	font-size: 25px
+}
+
+#header td#overview {
+	text-align: left;
+	width: 110px;
+	padding-right: 10px;
+}
+
+#header td#timeline {
+	width: 700px;
+}
+
+#header hr {
+    width:80%;
+    size:3;
+    border-color: #000;
+    color: #000;
+    background-color: #000;
+    margin-bottom: 1em;
+}
+
+#footer {
+    text-align:center;
+    height: 35px;
+}
+
+#footer hr {
+    width:80%;
+    size:3;
+    border-color: #000;
+    color: #000;
+    background-color: #000;
+}
+
+#footer table {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#footer td {
+    text-align: center;
+    padding: 0px 15px;
+}
+#main {
+    align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#main table {
+    align:center;
+    margin-left: auto;
+    margin-right: auto;
+	width: 80%
+}
+#main table td {
+	vertical-align: top;
+}
+
+#main table {
+    padding: 5px; /**/
+    border-collapse: collapse;
+}
+#main table table{
+width: 100%
+}
+
+#main table.dark {
+    background-color: #799FF2;
+}
+
+#main table td {
+    border-style: solid;
+    border-color: #D5DFF5;
+    border-width: 0px;
+    padding: 5px;
+}
+
+#main table.dark td {
+    text-align: center;
+    background-color: #799FF2;
+}
+
+#main table.dark tr.list td:hover {
+    cursor: pointer;
+    background-color: #628AE3;
+}
+
+#main table.dark tr.list td:active {
+    color: #0050FF;
+}
+
+#main table.light td {
+    text-align: left;
+    background-color: '#FFF';
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+#main table.light_unclickable td {
+    text-align: center;
+    background-color: '#FFF';
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+#main table tr.title td {
+    font-weight: bold;
+    padding: 12px;
+}
+
+#main table.dark tr.title td {
+    background-color: #416DCC;
+}
+
+#main table.light tr.title td {
+    background-color: #799FF2;
+}
+
+#main table.light td {
+    background-color: #FFF;
+}
+
+#main table.light_unclickable tr.title td {
+    background-color: #799FF2;
+}
+
+#main table.light_unclickable td {
+    background-color: #FFF;
+}
+
+#main table.light tr.list td:hover {
+    background-color: #B5CAF7;
+    cursor: pointer;
+}
+
+#main table.light tr.list td:active {
+    color: #0050FF;
+}
+
+#main table.light tr.doc td {
+    background-color: #FFF;
+    padding: 10px 15px;
+    /*border-width: 5px 10px;*/
+}
+
+#main table.light tr.doc a:link {
+	color: #12337A;
+	text-decoration: none;
+}
+
+#main table.light tr.doc a:visited {
+	color: #363C4A;
+	text-decoration: none;
+}
+
+#main table.light tr.doc a:hover {
+	color: #12337A;
+	text-decoration: underline;
+}
+
+#term table.light td {
+    text-align: left;
+    background-color: '#FFF';
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+#terms {
+    align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+
+#terms table table td:hover{
+    background-color: #416DCC;
+}
+
+
+
+#terms table table td{
+    background-color: #799FF2;
+    padding: 5px;
+    text-align: center;
+}
+#terms table td.title {
+    background-color: #416DCC;
+    width: 10%;
+}
+
+#graph {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+
+.bars {
+    width: 100%;
+    vertical-align:top;
+    margin-left: auto;
+    margin-right: auto;
+/*border-collapse: separate;
+border-spacing: 2px 2px;*/
+}
+.bars td{
+    height: 29px;
+    padding: 5px; /* edit*/
+}
+
+
+#graph table table td {
+    padding: 5px 0px;
+    text-align: center;
+}
+
+#graph table table {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#main .high-contrast-table {
+    margin-top: -25px;
+    border-collapse: separate;
+    border-spacing: 2px 2px;
+
+}
+
+#main table.high-contrast-table td {
+    background-color: #799FF2;
+    padding: 5px 0px;
+}
+
+.high-contrast-table td:hover {
+    background-color: #416DCC;
+}
+
+.high-contrast {
+    background-color: #799FF2;
+}
+
+.high-contrast:hover{
+    background-color: #416DCC;
+    cursor: pointer;
+}
+
+#graph table td.dark-hover {
+    width: 600.0px;
+}
+
+.dark-hover {
+    background-color: #416DCC;
+}
+
+.dark-hover:hover {
+    background-color: #2E58B3;
+    cursor: pointer;
+}
+
+.dark-hover:active {
+    color: #0050FF;
+}
+
+.medium-hover {
+    background-color: #799FF2;
+    text-align: center;
+}
+
+.medium-hover:hover {
+    background-color: #628AE3;
+    cursor: pointer;
+}
+
+.medium-hover:active {
+    color: #0050FF;
+}
+
+.clickable:active {
+    background-color: #0050FF;
+}
+
+.clickable:hover {
+    cursor: pointer;
+}
+
+#topics {
+    align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+
+#topics table{
+    border-collapse: collapse;
+    background-color: #799FF2;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#topics td {
+    border-style: solid;
+    border-color: #D5DFF5;
+    border-width: 0px 10px;
+    text-align: center;
+    background-color: $middle;
+    padding: 5px;
+    width: 250px; /*TODO: make this work for as a percentage (for smaller browser widths) */
+}
+
+#topics tr.titles td {
+    font-weight: bold;
+    background-color: #416DCC;
+    padding: 12px;
+}
+
+#topics tr.titles td:hover {
+    background-color: #2E58B3;
+    cursor: pointer;
+}
+
+#topics tr.titles td:active {
+    color: #0050FF;
+}
+
+#topics td:hover {
+    background-color: #628AE3;
+    cursor: pointer;
+}
+
+#topics td:active {
+    color: #0050FF;
+}
+
+#topics td.blank:hover {
+    background-color: #D5DFF5;
+    cursor: default;
+}
+
+#topics tr.titles td.blank:hover {
+    background-color: #D5DFF5;
+    cursor: default;
+}
+
+#topics tr.spacer:hover td {
+    cursor: default;
+}
+
+#topics tr td.blank {
+    background-color: #D5DFF5;
+}
+
+#topics tr.spacer td {
+    background-color: #D5DFF5;
+    padding: 5px;
+}
+
+#list table {
+    text-align: center;
+    width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    table-layout: fixed;
+}
+
+#list table td {
+    text-align: center;
+    border-style: solid;
+    width: 12.5%;
+    border-color: #D5DFF5;
+    background-color: #799FF2;
+    border-width: 0px;
+    padding: 5px;
+    word-wrap:break-word;
+}
+
+#list table td:hover {
+    cursor: pointer;
+    background-color: #416DCC;
+}
+
+#list table td:active {
+    color: #0050FF;
+}
+
+#list table td.blank {
+    background-color: #D5DFF5;
+}
+
+#list table td.blank:hover {
+    cursor: default;
+    background-color: #D5DFF5;
+}
+
+canvas {
+    background-color: #FFF;
+}
+
+
+
+
+#navigation table {
+    font-size: 90%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #799FF2;
+    margin: 0;
+    padding: 0;
+}
+
+#navigation table td {
+    vertical-align: center;
+    position: relative;
+    padding: 2 10;
+}
+
+#navigation table td.navtext {
+    width: 1%;
+    margin-right: 0%;
+}
+
+#navigation table td.linked {
+    width: 1%;
+    margin-left: 0%;
+    color: #12337A;
+    padding: 2 0;
+    cursor: default;
+}
+
+#navigation table td.linked ul li{
+    width: 120px;
+}
+
+#navigation td.searchbar {
+    width: 1%;
+    height: 100%;
+    text-align: right;
+    padding: 1 1 1 5;
+    background: none;
+    border: 0;
+    position: relative;
+}
+
+#navigation td.searchbar input {
+    background-image: url('/static/img/search.png');
+    background-repeat: no-repeat;
+    padding-right:15px; 
+    background-position: right center;
+    line-height: 1.2;
+}
+
+#navigation td.searchbar span {
+    position: absolute;
+    display: block;
+    top: 5px;
+    right: 4px;
+    width: 16px;
+    height: 16px;
+    background: url('');
+    cursor: pointer;
+}
+
+
+#navigation td ul {
+    list-style: none;
+    position: absolute;
+    top: 9;
+    display: none;
+    padding-left: 0;
+}
+
+#navigation a {
+    display: block;
+    text-decoration: none;
+    border-bottom: 0;
+    color: #12337A;
+    padding: 0 10;
+}
+
+#navigation td.linked:hover {
+    background-color: #416DCC;
+    color: #000;
+}
+
+#navigation td:hover ul {
+    display: block;
+    border: 2px solid #416DCC;
+    background: #799FF2;
+    margin-top: 12px;
+}
+
+#navigation td:hover ul a {
+    padding: 4;
+}
+
+#navigation td:hover  a {
+    color: #000;
+}
+
+#navigation ul a:hover {
+    background-color: #628AE3;
+}
+
+#navigation ul a:active {
+    color: #0050FF;
+}
+
+#navigation hr {
+    position: absolute;
+    top: 1.1em;
+    width: 100%;
+    background-color: #547DD6;
+    height: 1px;
+    border: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.hidden {
+	position: fixed;
+	display: none;
+	bottom: 0;
+	height: 40px;
+	width: 100%;
+	background-color: #000;
+}
+
+.hidden .count {
+	background-color: #416DCC;
+}
+
+.hidden .total {
+	background-color: #799FF2;
+}
+
+.yearslider {
+	width: 50%;
+}
+
+#year {
+	font-weight: bold;
+	margin-bottom: -10px;
+}
+
+#waiting {
+	display: none;
+	font-size: 14px;
+}
+
+#yscale {
+	height: 300px;
+	text-align: right;
+}
+#ymax {
+	vertical-align: top;
+	text-align: right;
+}
+#ymin {
+	vertical-align: bottom;
+	text-align: right;
+}
+#ybuff{
+	height: 100%;
+}
+#term_timeline {
+	width: 700px;
+}
+table#xscale {
+	width: 700px;
+}
+#xscale tr {
+	width: 700px;
+}
+#xmax {
+	text-align: right;
+}
+#xmin {
+	text-align: left;
+}
+.xbuff{
+	width: 100%;
+}
+

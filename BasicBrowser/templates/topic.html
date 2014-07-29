@@ -1,0 +1,85 @@
+<html>
+<head>
+    <script language="JavaScript" src="http://code.jquery.com/jquery-1.4.4.js"></script>
+    <script language="JavaScript" src="/static/js/jquery.rightClick.js"></script>
+    <script type="text/JavaScript"> 
+    <!--
+    function highlight(id) {
+	   	var list = document.getElementById(id+'_list');
+	   	var bar = document.getElementById(id+'_bar');
+		if (list != null) {
+			list.style.backgroundColor='#628AE3';
+		}
+		if (bar != null) {
+			bar.style.backgroundColor='#416DCC';
+		}
+	}
+    
+    function unhighlight(id) {
+		var list = document.getElementById(id+'_list');
+	   	var bar = document.getElementById(id+'_bar');
+		if (list != null) {
+			list.style.backgroundColor='#799FF2';
+		}
+		if (bar != null) {
+			bar.style.backgroundColor='#799FF2';
+		}
+    }
+    //-->
+    </script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<title>{{ topic.title }}</title>
+<link href="/static/css/styling.css" rel="stylesheet" type="text/css">
+
+</head>
+  <body>
+{{ nav_bar|safe }}
+<div id="top"></div>
+<h1 id="header">
+<table><tr>
+<td id="title">{{ topic.title }}</td>
+</tr></table></span>
+<hr noshade>
+</h1>
+
+<div id="main">
+<table width="100%" class="high-contrast-table"><tbody><tr>
+</tr></tbody></table>
+<table><tr>
+<td width="30.0%">
+<table class="dark">
+<tr class="title">
+<td>words</td></tr>
+{% if terms %}
+	{% for term in terms %}
+	<tr class="list" onclick="window.location.href='/term/{{ term.id }}'" onmouseover="highlight('{{ term.title }}')" onmouseout="unhighlight('{{ term.title }}')"><td id="{{ term.title }}_list">{{ term.title }}</td><tr>
+	{% endfor %}
+{% endif %}
+<tmv-topic-terms-column>
+</table>
+</td>
+
+<td width="70.0%">
+<table class="light">
+<tr class="title">
+<td>related documents</td>
+</tr>
+{% if docs %}
+	{% for doc in docs %}
+	<tr class="list"><td id="{{ doc.title }}" onclick="window.location.href='/doc/{{ doc.id }}'">{{ doc.title }}</td><tr>
+	{% endfor %}
+{% endif %}
+</table>
+</td>
+
+</tr></table>
+</div>
+
+<div id="footer">
+<br>
+<hr noshade>
+</div>
+  </body>
+</html>
+

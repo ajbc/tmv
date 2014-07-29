@@ -1,0 +1,54 @@
+<html>
+<head>
+    <script language="JavaScript" src="http://code.jquery.com/jquery-1.4.4.js"></script>
+    <script language="JavaScript" src="/static/js/jquery.rightClick.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<title>Wikipedia Topics</title>
+<link href="/static/css/styling.css" rel="stylesheet" type="text/css">
+
+</head>
+  <body>
+{{ nav_bar|safe }}
+<div id="top"></div>
+<div id="header">
+<h1>Wikipedia Topics</h1>
+<h2>List of Terms Per Topic</h2> 
+<hr noshade>
+</div>
+<div id="topics"> 
+	<table>	
+	{% for row in rows %}
+		<tr class="titles"> 
+		{% for topic in row.0 %}
+			{% if topic %}
+				<td onclick="window.location.href='/topic/{{ topic.id }}'">{{ topic.title }}</td>
+			{% else %}
+				<td class="blank"></td>
+			{% endif %}
+		{% endfor %}
+		</tr>
+		{% for terms in row.1%}
+		<tr>
+			{% for term in terms %}
+				{% if term %}
+					<td onclick="window.location.href='/term/{{ term.id }}'">{{ term.title }}</td>
+				{% else %}
+					<td class="blank"></td>
+				{% endif %}
+			{% endfor %}
+		</tr>
+		{% endfor %}
+		</tr><tr class="spacer"><td></td><td></td><td></td><tr> 
+	{% endfor %}
+	</table>
+	 
+</div>
+
+<div id="footer">
+<br>
+<hr noshade>
+</div>
+  </body>
+</html>
+

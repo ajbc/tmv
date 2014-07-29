@@ -1,0 +1,86 @@
+<html>
+<head>
+    <script language="JavaScript" src="http://code.jquery.com/jquery-1.4.4.js"></script>
+    <script language="JavaScript" src="/static/js/pie.js"></script>
+    <script language="JavaScript" src="/static/js/search.js"></script>
+
+
+    <script type="text/JavaScript">
+    <!--
+
+    var array = {{ pie_array|safe }};
+    var elements = generate_pie_elements(array);
+    var piec = null;
+    function init() {
+        // create pie chart
+        piec = new PieChart(elements);
+        piec.initialize();
+
+    }
+
+    function highlight(i) {
+        piec.highlight(i);
+    }
+    
+    function unhighlight() {
+        piec.unhighlight();
+    }
+    //-->
+    </script>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <title>{{ doc.title }}</title>
+
+    <link href="/static/css/styling.css" rel="stylesheet" type="text/css">
+</head>
+
+<body onLoad="init()">
+{{ nav_bar|safe }}
+
+    <div id="top"></div>
+
+    <h1 id="header">
+        <table><tr>
+            <td id="title">{{ doc.title }}</td>
+        </tr></table>
+
+        <hr noshade>
+    </h1>
+
+    <div id="main">
+        <table><tr>
+            <td width="210px">
+                <table class="dark">
+                <tr><td><canvas id="canvas" width="200" height="200"></canvas></td></tr>
+                <tr class="title">
+                    <td>related topics</td>
+                </tr>
+                {% if topics %}
+			{% for topic in topics %}
+			<tr class="list"><td id="topic_{{ topic.id }}" onmouseover="highlight({{ forloop.counter|add:"-1" }})" onmouseout="unhighlight()" onclick="window.location.href='/topic/{{ topic.id }}'">{{ topic.title }}</td></tr>
+			{% endfor %}
+		{% endif %}
+                </table>
+            </td>
+
+            <td>
+                <table class="light">
+                <tr class="doc"><td>
+                    <p>
+			            {{ doc.content|safe }}
+		            </p>
+		            <p><a href="http://en.wikipedia.org/wiki/{{ doc.title }}">Full article&nbsp;&#x25B8;</a></p>
+                </td></tr>
+                </table>
+            </td>
+        </tr></table>
+    </div>
+
+    <div id="footer">
+        <br>
+        <hr noshade>
+    </div>
+<p align=center>The contents of the Wikipedia articles are released under <a href="http://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>.</p>
+</body>
+</html>

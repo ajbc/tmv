@@ -1,0 +1,48 @@
+<html>
+<head>
+    <script language="JavaScript" src="http://code.jquery.com/jquery-1.4.4.js"></script>
+    <script language="JavaScript" src="/static/js/jquery.rightClick.js"></script>
+    <script language="JavaScript" src="../js/bottom_bar_chart.js"></script> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<title>Wikipedia Topics</title>
+<link href="/static/css/styling.css" rel="stylesheet" type="text/css">
+
+</head>
+  <body>
+{{ nav_bar|safe }}
+<div id="top"></div>
+<div id="header">
+<h1>Wikipedia Terms</h1>
+<h2>List of Terms by Frequency</h2> 
+<hr noshade>
+</div>
+<div id="list"> 
+<div ><table onmouseover="show_count_bar()" onmouseout="hide_count_bar()"> 
+{% for row in rows %}
+	<tr>
+	{% for term, count, percent in row %}
+		{% if term %}
+			<td title="{{ count }}" onclick="window.location.href='/term/{{ term.id }}'" onmouseover="count_adjust({{ percent }})">{{ term.title }}</td>
+		{% else %}
+			<td class="blank"></td>
+		{% endif %}
+	{% endfor %}
+	</tr>
+{% endfor %} 
+</table>
+
+prev next
+</div>
+</div>
+
+<div onmouseover="show_count_bar()" onmouseout="hide_count_bar()"><table class="hidden"><tr><td class="count"></td><td class="total"></td> 
+</tr></table></div>
+
+<div id="footer">
+<br>
+<hr noshade>
+</div>
+  </body>
+</html>
+

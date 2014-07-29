@@ -1,0 +1,33 @@
+<html>
+<head>
+    <script language="JavaScript" src="http://code.jquery.com/jquery-1.4.4.js"></script>
+    <script language="JavaScript" src="/static/js/jquery.rightClick.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<title>Wikipedia Topics</title>
+<link href="/static/css/styling.css" rel="stylesheet" type="text/css">
+
+</head>
+  <body>
+{{ nav_bar|safe }}
+<div id="top"></div>
+<div id="header">
+<h1>Wikipedia Topics</h1>
+<h2>Relative Presence of Topics in all Documents</h2> 
+<hr noshade>
+</div>
+<div id="graph"> 
+<table width="100%">
+{% for topic, topic_score, width in topic_tuples %}
+<tr><td><table width="{{ width|floatformat:1 }}%" ><tr><td class="high-contrast" title="{{ topic_score|floatformat:0 }}" onclick="window.location.href='/topic/{{ topic.id }}'">{{ topic.title }}</td></tr></table></td></tr>
+{% endfor %}
+</table> 
+</div>
+
+<div id="footer">
+<br>
+<hr noshade>
+</div>
+  </body>
+</html>
+
