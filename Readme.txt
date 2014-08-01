@@ -3,7 +3,7 @@ ONLINE TOPIC MODEL VISUALIZATION
 Allison J. B. Chaney
 achaney@princeton.edu
 
-(C) Copyright 2011, Allison J. B. Chaney
+(C) Copyright 2011-2014, Allison J. B. Chaney
 
 This is free software, you can redistribute it and/or modify it under
 the terms of the GNU General Public License.
@@ -19,7 +19,9 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 DESCRIPTION
 
 This code uses the Django web framework [https://www.djangoproject.com],
-which will need to be installed.
+which will need to be installed. On Unix systems, this can be done with:
+
+    sudo pip install Django
 
 The BasicBrowser is an interface that lazily generates pages to display
 the results of a topic model.  Since each page querys the database, the
