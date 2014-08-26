@@ -22,6 +22,7 @@ This code uses the Django web framework [https://www.djangoproject.com],
 which will need to be installed. On Unix systems, this can be done with:
 
     sudo pip install Django
+    currently requires 1.2.4
 
 The BasicBrowser is an interface that lazily generates pages to display
 the results of a topic model.  Since each page querys the database, the
@@ -34,13 +35,13 @@ INCLUDED FILES
 * BasicBrowser: a directory containing an online topic model browser,
     written in Python using the Django framework.
     * static: directory containing javascript, css, image files
-    * templates: directory containing template html files with Django 
+    * templates: directory containing template html files with Django
         tags and filters
     * tmv_app: directory containing models and views files for the browser
         (see Django doc for more details)
-    * db.py: a file to control writes to the database; this is generally 
+    * db.py: a file to control writes to the database; this is generally
         the file imported into external topic model source (see wiki example)
-    * all other .py files that come standard with Django (see Django doc 
+    * all other .py files that come standard with Django (see Django doc
         for details)
 * onlinewikipedia.py: a modified version of the Python script that comes
     with Online LDA (see below for source)
@@ -50,7 +51,7 @@ INCLUDED FILES
 ------------------------------------------------------------------------
 WIKIPEDIA DEMO
 
-A demonstration of this browser can be run with the Wikipedia demo 
+A demonstration of this browser can be run with the Wikipedia demo
 included with the Online LDA source:
 
     http://www.cs.princeton.edu/~blei/downloads/onlineldavb.tar
@@ -63,13 +64,13 @@ To run the browser with the Wikipedia demo, substitute the original
 
     cp online-tmve/onlinewikipedia.py onlineldavb/onlinewikipedia.py
 
-All paths to the database need to be absolute, so modify the following 
+All paths to the database need to be absolute, so modify the following
 lines accordingly.
 
     onlinewikipedia.py, line 27
     BasicBrowser/settings.py, line 15
 
-Finally, before running the demo, the database needs to be created.  In 
+Finally, before running the demo, the database needs to be created.  In
 the BasicBrowser directory, run
 
     python manage.py syncdb
@@ -104,10 +105,10 @@ USING THE BROWSER WITH OTHER TOPIC MODELS
 
 The browser can be used for any topic model, even if the model is not online.
 For algorithms written in Python, simply import the db.py file and use its
-functions to write to the database.  For algorithms not written in Python, 
-you need only write your data to the database, which can be done directly 
+functions to write to the database.  For algorithms not written in Python,
+you need only write your data to the database, which can be done directly
 with sqlite3, by embeding the db.py file in your code, or by using any other
 method that works for you.  If you have the output of a model in a file, it
 might be easiest to write a python script to transfer that data using db.py.
-It shoudl be noted that as written, db.py uses a separate thread for most 
+It shoudl be noted that as written, db.py uses a separate thread for most
 writes to the database; this may not be ideal for all applications.
